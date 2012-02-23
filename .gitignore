@@ -1,0 +1,7 @@
+public/*.html
+public/*/*.html
+public/*/*/*.html
+public/*.json
+public/*/*.json
+public/*.css
+public/*.js
