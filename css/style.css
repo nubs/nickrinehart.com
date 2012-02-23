@@ -77,10 +77,6 @@ nav li:hover ul { display: block; }
 
 html.js nav li:hover ul { display: none; }
 
-.picbar { width: 100%; display: none; }
-
-.picbar img { width: 25%; float: left; margin-right: -1px; }
-
 section#body { padding: 0.5em; }
 
 footer { clear: both; text-align: right; }

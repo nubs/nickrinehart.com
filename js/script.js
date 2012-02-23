@@ -54,34 +54,20 @@ function initAlbum() {
 
 $(document).ready(function() {
   var hash = document.location.hash.substring(1);
-/*  if ( !hash )
-  {
-    $('div.picbar img').fadeTo(300, 0.3);
-    $('div.picbar').slideDown(1000);
-  }
-
-  $('div.picbar img').hover(function() {
-    $(this).fadeTo(300, 1.0);
-  }, function() {
-    $(this).fadeTo(300, 0.3);
-  }); */
 
   if ( hash )
   {
-    /* $('div.picbar').slideUp(1000); */
     $('section#body').load('/ajax/' + hash, initAlbum);
     _gaq.push(['_trackPageview', '/ajax/' + hash]);
   }
 
   $('nav ul a').click(function(event) {
-    /* $('div.picbar').slideUp(1000); */
     event.preventDefault();
     $('section#body').load('/ajax/' + $(this).attr('href'), initAlbum);
     _gaq.push(['_trackPageview', '/ajax/' + $(this).attr('href')]);
   });
 
   $('div#header a').click(function(event) {
-    /* $('div.picbar').slideDown(1000); */
     event.preventDefault();
     $('section#body').load('/ajax/' + $(this).attr('href'), initAlbum);
     _gaq.push(['_trackPageview', '/ajax/' + $(this).attr('href')]);

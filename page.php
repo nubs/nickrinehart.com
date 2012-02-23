@@ -20,12 +20,6 @@
     <title>nick rinehart</title>
   </head>
   <body>
-    <div class="picbar"<?= ( @$page == 'index' ? '' : ' style="display: none;"' ) ?>>
-      <img src="/pic1.jpg" alt="" />
-      <img src="/pic2.jpg" alt="" />
-      <img src="/pic3.jpg" alt="" />
-      <img src="/pic4.jpg" alt="" />
-    </div>
     <header id="global">
       <hgroup>
         <h1><a href="/" title="nick">nick</a></h1>
