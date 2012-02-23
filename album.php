@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 /* vim: set ft=php sw=2 ts=2 sts=2 et : */
 $album = json_decode(file_get_contents(dirname(__FILE__) . "/albums/{$argv[1]}.json"), true);
@@ -11,7 +10,7 @@ $album = json_decode(file_get_contents(dirname(__FILE__) . "/albums/{$argv[1]}.j
 foreach ( $album['photos'] as $photo )
 {
 ?>
-          <img src="<?= $photo ?>" />
+          <img src="/<?= $photo ?>" />
 <?php
 }
 ?>
