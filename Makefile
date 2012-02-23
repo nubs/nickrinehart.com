@@ -58,5 +58,5 @@ public/style.css: css/style.css
 	yuicompressor css/style.css > public/style.css
 
 clean:
-	rm public/*.{js,css}
+	rm public/*.{js,css,html}
 	rm -r public/ajax public/album
