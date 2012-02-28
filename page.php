@@ -1,5 +1,7 @@
 <?php
 /* vim: set ft=php sw=2 ts=2 sts=2 et : */
+array_shift($argv);
+$argv = array_values($argv);
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -8,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type="text/javascript" src="/script.js"></script>
-    <script type="text/javascript" src="/modernizr-2.0.6.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" async="true"></script>
     <script type="text/javascript">
       var _gaq = [['_setAccount', 'UA-17934068-1'], ['_trackPageview']];
       (function() {
@@ -27,21 +29,15 @@
       </hgroup>
       <nav>
         <ul>
-          <li><a href="/album/ultra-29">Photos</a>
-            <ul>
-              <li><a href="/album/ultra-20">20 week ultrasound</a></li>
-              <li><a href="/album/ultra-29">29 week ultrasound</a></li>
-              <li><a href="/album/belly">Mommy's Belly</a></li>
-            </ul>
-          </li>
+          <li><a href="/album/ultra-20">20 week ultrasound</a></li>
+          <li><a href="/album/ultra-29">29 week ultrasound</a></li>
+          <li><a href="/album/belly">Mommy's Belly</a></li>
           <li><a href="/nursery">Nick's Nursery</a></li>
         </ul>
       </nav>
     </header>
     <section id="body">
 <?php
-array_shift($argv);
-$argv = array_values($argv);
 if ( !file_exists(dirname(__FILE__) . "/{$argv[0]}") )
   $argv[0] .= ".php";
 

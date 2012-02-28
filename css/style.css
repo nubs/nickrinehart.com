@@ -51,35 +51,22 @@ body { background-color: #907155; color: #b7cee1; font-family: 'Kristen ITC', 'C
 
 a { text-decoration: none; color: #b7cee1; }
 
-header#global { position: relative; display: block; background-color: #b7cee1; color: #000000; padding: 0.25em; clear: both; }
+header#global { position: relative; background-color: #b7cee1; color: #000000; padding: 0.25em; clear: both; }
 
 header#global a { color: #000000; }
 
 header#global hgroup { width: 14em; margin: 0 auto; font-family: 'Century Gothic', sans-serif; }
 
-header#global hgroup h1 { position: relative; font-size: 4em; font-weight: lighter; letter-spacing: 0.07em; }
+header#global h1 { position: relative; font-size: 4em; font-weight: lighter; letter-spacing: 0.07em; }
 
-header#global hgroup h2 { position: relative; font-size: 0.7em; font-style: italic; }
+header#global h2 { position: relative; font-size: 0.7em; font-style: italic; }
 
-nav ul { position: absolute; list-style: none; font-size: 0.9em; top: 2.2em; left: 0; }
+header#global ul { position: absolute; list-style: none; font-size: 0.9em; top: 2.2em; left: 0; }
 
-nav ul ul { position: relative; font-size: 1em; top: 0; }
 
-nav li { float: left; margin: 0 1.2em; color: #aaaaaa; background-color: #b7cee1; width: 7em; }
+header#global li { float: left; margin: 0 1.2em; color: #aaaaaa; background-color: #b7cee1; width: 7em; }
 
-nav li:hover { background-color: #bdd5e7; cursor: pointer; }
-
-nav li li { float: none; margin: 0; border-bottom: solid 1px #907155; width: 100%; }
-
-nav li ul { display: none; }
-
-nav li:hover ul { display: block; }
-
-html.js nav li:hover ul { display: none; }
-
-section#body { padding: 0.5em; }
-
-footer { clear: both; text-align: right; }
+footer { background-color: #b7cee1; color: #000000; clear: both; text-align: right; }
 
 h1 { font-size: 1.2em; font-weight: normal; }
 
@@ -106,3 +93,9 @@ div.small { width: 20%; }
 .album div { float: left; }
 
 .album .arrow { font-size: 5em; cursor: pointer; display: none; }
+
+img#face { float: right; clear: right; }
+
+ul#menu { float:right; font-size: 40px; }
+
+ul#menu li { padding: 32px 1em; }

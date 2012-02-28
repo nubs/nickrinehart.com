@@ -1,4 +1,19 @@
 /* vim: set ft=javascript sw=2 ts=2 sts=2 et : */
+function init() {
+  $('nav#index ul li').mouseover(function(event) {
+    var linkno = $(this).attr('id').substring(5);
+    $('img#face').attr('src', '/index-' + linkno + '.jpg');
+  });
+
+  $('header a, nav ul a').click(function(event) {
+    event.preventDefault();
+    $('section#body').load('/ajax/' + $(this).attr('href'), init);
+    _gaq.push(['_trackPageview', '/ajax/' + $(this).attr('href')]);
+  });
+
+  initAlbum();
+}
+
 function initAlbum() {
   var totalImages = $('.album .main img').size(), currentImage = 0, numImages = Math.min(5, totalImages), margin = 5, i = 0, left = 0, arrowwidth = 60, albummainwidth = $('.album').width() - arrowwidth * 2 - 10, imagewidth = (albummainwidth - (numImages-1) * margin) / (numImages + 1), albummainheight = 100, loadedImages = 0;
   if ( totalImages > 0 )
@@ -53,31 +68,5 @@ function initAlbum() {
 }
 
 $(document).ready(function() {
-  var hash = document.location.hash.substring(1);
-
-  if ( hash )
-  {
-    $('section#body').load('/ajax/' + hash, initAlbum);
-    _gaq.push(['_trackPageview', '/ajax/' + hash]);
-  }
-
-  $('nav ul a').click(function(event) {
-    event.preventDefault();
-    $('section#body').load('/ajax/' + $(this).attr('href'), initAlbum);
-    _gaq.push(['_trackPageview', '/ajax/' + $(this).attr('href')]);
-  });
-
-  $('div#header a').click(function(event) {
-    event.preventDefault();
-    $('section#body').load('/ajax/' + $(this).attr('href'), initAlbum);
-    _gaq.push(['_trackPageview', '/ajax/' + $(this).attr('href')]);
-  });
-
-  $('nav li').hover(function() {
-    $(this).find('ul').slideDown(500);
-  }, function() {
-    $(this).find('ul').slideUp(300);
-  });
-
-  initAlbum();
+  init();
 });
