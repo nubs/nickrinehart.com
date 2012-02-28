@@ -49,7 +49,7 @@ include dirname(__FILE__) . "/{$argv[0]}";
 ?>
     </section>
     <footer>
-      Designed by Team Spennifer &copy;2010
+      Designed by Team Spennifer &copy;<?=date('Y')?>
     </footer>
   </body>
 </html>
