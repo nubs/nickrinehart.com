@@ -1,8 +1,9 @@
-<?php
-/* vim: set ft=php sw=2 ts=2 sts=2 et : */
-array_shift($argv);
-$argv = array_values($argv);
-?>
+#!/usr/bin/ruby
+# vim: set ft=ruby sw=2 ts=2 sts=2 et :
+require 'date'
+$: << File.expand_path('../', __FILE__)
+
+puts <<EOS
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -22,6 +23,10 @@ $argv = array_values($argv);
     <title>nick rinehart</title>
   </head>
   <body>
+EOS
+
+if ARGV[0] != 'pages/index.html'
+  puts <<EOS
     <header id="global">
       <hgroup>
         <h1><a href="/" title="nick">nick</a></h1>
@@ -36,16 +41,27 @@ $argv = array_values($argv);
         </ul>
       </nav>
     </header>
-    <section id="body">
-<?php
-if ( !file_exists(dirname(__FILE__) . "/{$argv[0]}") )
-  $argv[0] .= ".php";
+EOS
+end
 
-include dirname(__FILE__) . "/{$argv[0]}";
-?>
+puts <<EOS
+    <section id="body">
+EOS
+
+page = ARGV.shift
+begin
+  require page
+rescue LoadError
+  File.open(page) {|f|
+    print f.read
+  }
+end
+
+puts <<EOS
     </section>
     <footer>
-      Designed by Team Spennifer &copy;<?=date('Y')?>
+      Designed by Team Spennifer &copy;#{Date.today.year}
     </footer>
   </body>
 </html>
+EOS
