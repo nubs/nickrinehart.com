@@ -3,10 +3,11 @@ require 'rake/clean'
 CLOBBER.include('public/*.html', 'public/*.js', 'public/*.css', 'public/ajax', 'public/album')
 
 PAGES = FileList['pages/*']
-YUICOMPRESSABLE = FileList['js/*', 'css/*']
+JAVASCRIPT = FileList['js/*']
+CSS = FileList['css/*']
 ALBUMS = FileList['albums/*']
 
-task :default => [*PAGES.pathmap('public/%f'), *PAGES.pathmap('public/ajax/%f'), *YUICOMPRESSABLE.pathmap('public/%f'), *ALBUMS.pathmap('public/album/%n.json'), *ALBUMS.pathmap('public/album/%n.html'), *ALBUMS.pathmap('public/ajax/album/%n.html')]
+task :default => [*PAGES.pathmap('public/%f'), *PAGES.pathmap('public/ajax/%f'), *JAVASCRIPT.pathmap('public/%f'), 'public/style.css', *ALBUMS.pathmap('public/album/%n.json'), *ALBUMS.pathmap('public/album/%n.html'), *ALBUMS.pathmap('public/ajax/album/%n.html')]
 
 directory 'public/album'
 directory 'public/ajax/album'
@@ -34,7 +35,7 @@ PAGES.each do |source|
   end
 end
 
-YUICOMPRESSABLE.each do |source|
+JAVASCRIPT.each do |source|
   out = source.pathmap 'public/%f'
 
   file out => [source] do
@@ -43,6 +44,14 @@ YUICOMPRESSABLE.each do |source|
     else
       cp source, out
     end
+  end
+end
+
+file 'public/style.css' => CSS do
+  if ENV['compress']
+    sh "cat #{CSS.join(' ')} | yuicompressor --type css > public/style.css"
+  else
+    sh "cat #{CSS.join(' ')} > public/style.css"
   end
 end
 
