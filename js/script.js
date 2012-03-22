@@ -8,7 +8,6 @@ function init() {
   $('header a, nav ul a').click(function(event) {
     event.preventDefault();
     $('section#body').load('/ajax/' + $(this).attr('href'), init);
-    _gaq.push(['_trackPageview', '/ajax/' + $(this).attr('href')]);
   });
 
   initAlbum();
