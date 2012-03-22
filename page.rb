@@ -20,10 +20,6 @@ EOS
 if ARGV[0] != 'pages/index.html'
   puts <<EOS
     <header id="global">
-      <hgroup>
-        <h1><a href="/" title="nick">nick</a></h1>
-        <h2>brought to you by spennifer</h2>
-      </hgroup>
       <nav>
         <ul>
           <li><a href="/album/ultra-20">20 week ultrasound</a></li>
@@ -32,6 +28,10 @@ if ARGV[0] != 'pages/index.html'
           <li><a href="/nursery">Nick's Nursery</a></li>
         </ul>
       </nav>
+      <hgroup>
+        <h1><a href="/" title="nick">nick</a></h1>
+        <h2>brought to you by spennifer</h2>
+      </hgroup>
     </header>
 EOS
 end

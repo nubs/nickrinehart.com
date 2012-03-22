@@ -1,11 +1,11 @@
 /* vim: set ft=javascript sw=2 ts=2 sts=2 et : */
 function init() {
-  $('nav#index ul li').mouseover(function(event) {
+  $('header#index li').mouseover(function(event) {
     var linkno = $(this).attr('id').substring(5);
     $('img#face').attr('src', '/index-' + linkno + '.jpg');
   });
 
-  $('header a, nav ul a').click(function(event) {
+  $('header a, nav a').click(function(event) {
     event.preventDefault();
     $('section#body').load('/ajax/' + $(this).attr('href'), init);
   });

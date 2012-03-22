@@ -63,8 +63,17 @@ header#global h2 { position: relative; font-size: 0.7em; font-style: italic; }
 
 header#global ul { position: absolute; list-style: none; font-size: 0.9em; top: 2.2em; left: 0; }
 
-
 header#global li { float: left; margin: 0 1.2em; color: #aaaaaa; background-color: #b7cee1; width: 7em; }
+
+header#index ul { float: right; font-size: 40px; }
+
+header#index li { padding: 32px 1em; }
+
+header#index hgroup { float: right; margin: 120px 2em 0 0; }
+
+header#index h1 { font-size: 8em; font-weight: lighter; letter-spacing: 0.07em; }
+
+header#index h2 { font-size: 1em; font-style: italic; }
 
 footer { background-color: #b7cee1; color: #000000; clear: both; text-align: right; }
 
@@ -95,17 +104,3 @@ div.small { width: 20%; }
 .album .arrow { font-size: 5em; cursor: pointer; display: none; }
 
 img#face { float: right; clear: right; }
-
-ul#menu { float: right; font-size: 40px; }
-
-ul#menu li { padding: 32px 1em; }
-
-header#nick-index { float: right;}
-
-header#nick-index, header#nick-index a { color: #000000; }
-
-header#nick-index hgroup { width: 20em; margin: 120px 2em 0 0; }
-
-header#nick-index h1 { font-size: 8em; font-weight: lighter; letter-spacing: 0.07em; }
-
-header#nick-index h2 { font-size: 1em; font-style: italic; }
