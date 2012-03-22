@@ -17,7 +17,7 @@ function initAlbum() {
   var totalImages = $('.album .main img').size(), currentImage = 0, numImages = Math.min(5, totalImages), margin = 5, i = 0, left = 0, arrowwidth = 60, albummainwidth = $('.album').width() - arrowwidth * 2 - 10, imagewidth = (albummainwidth - (numImages-1) * margin) / (numImages + 1), albummainheight = 100, loadedImages = 0;
   if ( totalImages > 0 )
   {
-    $('.album .main').css('visibility', 'hidden');
+    $('.album').css('visibility', 'hidden');
     $('.album .main img').load(function() {
       if ( ++loadedImages >= totalImages )
       {
@@ -60,7 +60,7 @@ function initAlbum() {
           currentImage = (currentImage == totalImages-1 ? 0 : currentImage + 1);
         });
 
-        $('.album .main').css('visibility', 'visible');
+        $('.album').css('visibility', 'visible');
       }
     });
   }
