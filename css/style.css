@@ -44,7 +44,7 @@ div.small { width: 20%; }
 
 .album { width: 90%; margin: 0 auto; }
 
-.album .main { height: 100px; position: relative; }
+.album .main { position: relative; }
 
 .album .main img { height: 100px; }
 
