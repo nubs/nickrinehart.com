@@ -66,6 +66,4 @@ function initAlbum() {
   }
 }
 
-$(document).ready(function() {
-  init();
-});
+$(document).ready(init);
