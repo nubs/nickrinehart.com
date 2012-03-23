@@ -53,7 +53,6 @@ puts <<EOS
     </footer>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" defer></script>
     <script type="text/javascript" src="/script.js" defer></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" defer></script>
   </body>
 </html>
 EOS
