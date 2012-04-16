@@ -51,8 +51,8 @@ puts <<EOS
     <footer>
       Designed by Team Spennifer &copy;#{Date.today.year}
     </footer>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" defer></script>
-    <script type="text/javascript" src="/script.js" defer></script>
   </body>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" defer></script>
+  <script type="text/javascript" src="/script.js" defer></script>
 </html>
 EOS
